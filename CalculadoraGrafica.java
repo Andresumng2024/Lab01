@@ -447,10 +447,58 @@ if(this.txtPantalla.getText().contains(".")){
         // TODO add your handling code here:
     }//GEN-LAST:event_btnPUNTODECIMALActionPerformed
 private void Operaciones(double valor1,double valor2){
+switch(tipooperaciones){
+
+    case "+":
+        resultado=valor1+valor2;
+        this.txtPantalla.setText(resultado+"");
+        valor1=Double.parseDouble(this.txtPantalla.getText());
+        break;
+    case "-":
+        resultado=valor1-valor2;
+        this.txtPantalla.setText(resultado+"");
+        valor1=Double.parseDouble(this.txtPantalla.getText());
+        break;
+         case "x":
+        resultado=valor1*valor2;
+        this.txtPantalla.setText(resultado+"");
+        valor1=Double.parseDouble(this.txtPantalla.getText());
+        break;
+         case "/":
+             if(valor2==0){
+                 txtPantalla.setText("Error");
+             }   else{        
+
+        resultado=valor1/valor2;
+        this.txtPantalla.setText(resultado+"");
+        valor1=Double.parseDouble(this.txtPantalla.getText());
+        break;
+             }
+         
 
 }
+}
     private void btnIGUALActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIGUALActionPerformed
- 
+inicio=true;
+operacion1=true;
+
+if(igual== true){
+        if(tipooperaciones== null)
+        {
+        }else
+        {
+            valor2 =Double.parseDouble(txtPantalla.getText());
+            this.txtPantallaposterior.setText(txtPantallaposterior.getText()+txtPantalla.getText());
+                    Operaciones(valor1,valor2);
+                    igual=false;
+        }
+    
+   }else
+    {
+txtPantallaposterior.setText("");
+Operaciones(valor1,valor2);
+    
+}
 // TODO add your handling code here:
     }//GEN-LAST:event_btnIGUALActionPerformed
 
