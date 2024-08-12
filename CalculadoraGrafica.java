@@ -483,14 +483,13 @@ inicio=true;
 operacion1=true;
 
 if(igual== true){
-        if(tipooperaciones== null)
-        {
+        if(tipooperaciones== null){
         }else
         {
             valor2 =Double.parseDouble(txtPantalla.getText());
             this.txtPantallaposterior.setText(txtPantallaposterior.getText()+txtPantalla.getText());
-                    Operaciones(valor1,valor2);
-                    igual=false;
+             Operaciones(valor1,valor2);
+              igual=false;
         }
     
    }else
@@ -514,14 +513,14 @@ Operaciones(valor1,valor2);
  igual=true;
  inicio=true;
 
-    if(operacion1==true){
+    if(operacion1=true){
     valor1=Double.parseDouble(this.txtPantalla.getText());
     this.txtPantallaposterior.setText("");
     this.txtPantallaposterior.setText(this.txtPantalla.getText()+"-");
     operacion1=false;
     }else
     {
-            if(operacion2==true){
+            if(operacion2=true){
             valor2=Double.parseDouble(this.txtPantalla.getText());
             this.txtPantallaposterior.setText("");
             this.txtPantallaposterior.setText(this.txtPantalla.getText()+"-");
@@ -538,7 +537,7 @@ Operaciones(valor1,valor2);
  igual=true;
  inicio=true;
 
-    if(operacion1==true){
+    if(operacion1=true){
     valor1=Double.parseDouble(this.txtPantalla.getText());
     this.txtPantallaposterior.setText("");
     this.txtPantallaposterior.setText(this.txtPantalla.getText()+"x");
@@ -562,14 +561,14 @@ Operaciones(valor1,valor2);
 igual=true;
  inicio=true;
 
-    if(operacion1==true){
+    if(operacion1=true){
     valor1=Double.parseDouble(this.txtPantalla.getText());
     this.txtPantallaposterior.setText("");
     this.txtPantallaposterior.setText(this.txtPantalla.getText()+"+");
     operacion1=false;
     }else
     {
-            if(operacion2==true){
+            if(operacion2=true){
             valor2=Double.parseDouble(this.txtPantalla.getText());
             this.txtPantallaposterior.setText("");
             this.txtPantallaposterior.setText(this.txtPantalla.getText()+"+");
@@ -587,14 +586,14 @@ igual=true;
 igual=true;
  inicio=true;
 
-    if(operacion1==true){
+    if(operacion1=true){
     valor1=Double.parseDouble(this.txtPantalla.getText());
     this.txtPantallaposterior.setText("");
     this.txtPantallaposterior.setText(this.txtPantalla.getText()+"/");
     operacion1=false;
     }else
     {
-            if(operacion2==true){
+            if(operacion2=true){
             valor2=Double.parseDouble(this.txtPantalla.getText());
             this.txtPantallaposterior.setText("");
             this.txtPantallaposterior.setText(this.txtPantalla.getText()+"/");
