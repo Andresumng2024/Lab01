@@ -22,7 +22,7 @@ public class Menu {
 
         // Crear el marco de la ventana
         frame = new JFrame(titulo);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //frame.setLocationRelativeTo(null);
         frame.setSize(400, 50 * numop);
         frame.setLayout(new BorderLayout());
@@ -42,12 +42,20 @@ public class Menu {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     // *** AJUSTAR SEGUN LAS OPCIONES DEL MENU ***
-                    switch (index) {
-                        case 0:
-                            CalculadoraConsola.main(new String[]{});  break;
-                        case 1:
-                            botones[index].setEnabled(!botones[index].isEnabled());
-                            new CalculadoraGrafica().setVisible(true);
+                   switch (index) {
+                case 0:
+                    new Thread(() -> {
+                        CalculadoraConsola.main(new String[]{});
+                    }).start();
+                    frame.dispose();  // Cerrar la ventana del menú
+                    break;
+                case 1:
+                    new Thread(() -> {
+                        new CalculadoraGrafica().setVisible(true);
+                    }).start();
+                    frame.dispose();  // Cerrar la ventana del menú
+                    break;
+                        
                     }
                     // *** FINAL AJUSTES ***
                 }
