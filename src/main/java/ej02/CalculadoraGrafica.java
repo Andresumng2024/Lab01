@@ -13,7 +13,7 @@ public class CalculadoraGrafica extends javax.swing.JFrame {
     /*
      * Creates new form CalculadoraGrafica
      */
-    private boolean inicio = true,igual,operacion1,operacion2;
+    private boolean inicio = true;
     private double cos,sin,tan,resultado,valor1,valor2;
     private String funciones,tipooperaciones;
     
@@ -231,7 +231,7 @@ public class CalculadoraGrafica extends javax.swing.JFrame {
 
         txtPantalla.setFont(new java.awt.Font("Segoe UI Symbol", 1, 23)); // NOI18N
         txtPantalla.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        txtPantalla.setText("\n");
+        txtPantalla.setText("0");
         txtPantalla.setFocusable(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -239,13 +239,13 @@ public class CalculadoraGrafica extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(txtPantalla, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(40, 40, 40))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(txtPantallaposterior, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(49, 49, 49))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(txtPantalla, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -437,7 +437,7 @@ valor1=Double.parseDouble( txtPantalla.getText());
 txtPantallaposterior.setText(valor1+"^");
 tipooperaciones="potencia";
 
-igual=true;
+
     
 // TODO add your handling code here:
     }//GEN-LAST:event_btnELEVAActionPerformed
@@ -552,7 +552,7 @@ switch(tipooperaciones){
       
         break;
          case "/":
-             if(valor2==0){
+             if(valor1==0){
                  txtPantalla.setText("Error");
              }   else{        
 
@@ -573,7 +573,7 @@ switch(tipooperaciones){
     private void btnIGUALActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIGUALActionPerformed
 
         inicio=true;  
-        if(igual= true){
+      
                     if(tipooperaciones== null){
 txtPantallaposterior.setText("");
         }else
@@ -581,23 +581,19 @@ txtPantallaposterior.setText("");
             valor2 =Double.parseDouble(txtPantalla.getText());
             this.txtPantallaposterior.setText(txtPantallaposterior.getText()+txtPantalla.getText());
              Operaciones(valor1,valor2);
-              igual=false;
+             
         }
          
-        } else
-        {
-            
-
-Operaciones(valor1,valor2);
-        }
+        
+       
         tipooperaciones=null;
-        igual=true;
+      
 // TODO add your handling code here:
     }//GEN-LAST:event_btnIGUALActionPerformed
 
     private void btnRESTARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRESTARActionPerformed
  inicio=true;
- igual=false;
+
     valor1=Double.parseDouble(this.txtPantalla.getText());
     this.txtPantallaposterior.setText("");
     this.txtPantallaposterior.setText(this.txtPantalla.getText()+"-");
@@ -608,7 +604,7 @@ Operaciones(valor1,valor2);
 
     private void btnMULTIPLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMULTIPLActionPerformed
  inicio=true;
- igual=false;
+
     valor1=Double.parseDouble(this.txtPantalla.getText());
     this.txtPantallaposterior.setText("");
     this.txtPantallaposterior.setText(this.txtPantalla.getText()+"x");
@@ -618,7 +614,7 @@ Operaciones(valor1,valor2);
 
     private void btnSUMARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSUMARActionPerformed
 inicio=true;
- igual=false;
+
     valor1=Double.parseDouble(this.txtPantalla.getText());
     this.txtPantallaposterior.setText("");
     this.txtPantallaposterior.setText(this.txtPantalla.getText()+"+");
@@ -630,7 +626,7 @@ inicio=true;
 
     private void btnDIVIDIRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDIVIDIRActionPerformed
 inicio=true;
- igual=false;
+
     valor1=Double.parseDouble(this.txtPantalla.getText());
     this.txtPantallaposterior.setText("");
     this.txtPantallaposterior.setText(this.txtPantalla.getText()+"/");
@@ -656,7 +652,7 @@ txtPantalla.setText(Math.sqrt(valor1)+" ");
     private void btnBORRARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBORRARActionPerformed
   inicio=true;
         funciones="";
-        igual=true;
+     
         valor1=0;
         valor2=0;
         resultado=0;
